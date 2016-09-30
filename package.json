@@ -5,12 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "preversion": "git reset HEAD",
-    "postversion": "git push --follow-tags"
+    "preversion": "build-tools preversion",
+    "postversion": "build-tools postversion --version=$npm_package_version"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/StefanDywersant/testrepo.git"
+  },
+  "dependencies": {
+    "testrepo-build-tools": "git+https://github.com/StefanDywersant/testrepo-build-tools.git"
   },
   "author": "StefanDywersant <karol.maciaszek@gmail.com> (https://github.com/StefanDywersant)",
   "license": "ISC",
